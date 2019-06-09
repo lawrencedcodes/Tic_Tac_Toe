@@ -3,8 +3,8 @@ package com.udacity;
 import java.util.Arrays;
 
 /**
- * Created by udacity 2016
- * The Main class containing game logic and backend 2D array
+ *
+ * The Main class contains game logic and 2D array
  */
 public class Game {
 
