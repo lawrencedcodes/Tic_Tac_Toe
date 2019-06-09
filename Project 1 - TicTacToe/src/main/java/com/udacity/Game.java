@@ -151,6 +151,34 @@ public class Game {
     public String checkGameWinner(char [][]grid){
         String result = "None";
         //Student code goes here ...
+        char winner;
+
+        for (int i = 0; i < grid.length; i++) {
+            // Check the horizontal axis
+            if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i] && grid[0][i] != '-') {
+                winner = Character.toUpperCase(grid[0][i]);
+                result = winner + " wins";
+                break;
+            }
+            // Check the vertical axis
+            else if (grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2] && grid[i][0] != '-') {
+                winner = Character.toUpperCase(grid[i][0]);
+                result = winner + " wins";
+                break;
+            }
+            // Check the diagonal
+            else if ((grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2] && grid[1][1] != '-') ||
+                    (grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2] && grid[1][1] != '-')) {
+                winner = Character.toUpperCase(grid[1][1]);
+                result = winner + " wins";
+                break;
+            }
+            // Check the tie case "Tie"
+            else if (freeSpots == 0) {
+                result = "Tie";
+                break;
+            }
+        }
         return result;
     }
 
